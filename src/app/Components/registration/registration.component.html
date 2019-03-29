@@ -1,0 +1,33 @@
+<h1>Регистрация</h1>
+<form [formGroup]="myForm">
+  <div class="form-group">
+    <label>Login</label>
+    <input type="text" class="form-control" formControlName="login"/>
+    <div class="alert alert-danger"
+         *ngIf="myForm.controls['login'].invalid && myForm.controls['login'].touched">
+      Обязательно к заполнению
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="text" class="form-control" formControlName="password"/>
+    <div class="alert alert-danger"
+         *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched">
+      Обязательно к заполнению
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="text" class="form-control" formControlName="repPassword"/>
+    <div class="alert alert-danger"
+         *ngIf="myForm.controls['repPassword'].invalid && myForm.controls['repPassword'].touched">
+      Обязательно к заполнению
+    </div>
+  </div>
+  <div class="alert alert-danger"
+       *ngIf="myForm.controls['password'].value !== myForm.controls['repPassword'].value">
+    Пароли не совпадают
+  </div>
+  <button *ngIf="myForm.controls['password'].value === myForm.controls['repPassword'].value" type="submit" class="btn btn-primary" routerLink="/authorization" (click)="add()">Зарегестрироваться</button>
+  <button type="submit" class="btn btn-primary" routerLink="/authorization" >Назад</button>
+</form>

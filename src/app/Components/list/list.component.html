@@ -1,0 +1,39 @@
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button"  class="btn btn-secondary" routerLink="/menu/list">Список сотрудников</button>
+    <button type="button" class="btn btn-secondary" routerLink="/menu/history-list">История</button>
+    <button type="button" class="btn btn-secondary" routerLink="/authorization" (click)="GoOut()">Выйти</button>
+</div>
+<h1>Сотрудники</h1>
+<table class="table">
+    <thead>
+    <tr class="tg-row">
+        <th><span class="btn">#</span></th>
+        <th ><span class="btn" (click)="sortByFieldName('secondName')">Фамилия </span></th>
+        <th><span class="btn" (click)="sortByFieldName('firstName')">Имя</span></th>
+        <th><span class="btn" (click)="sortByFieldName('lastName')">Отчество</span></th>
+        <th><span class="btn" (click)="sortByFieldName('role')">Должность</span></th>
+        <th><span class="btn">Дата рождения</span></th>
+        <th><span class="btn">Статус</span></th>
+        <th><button type="button" class="btn btn-success" routerLink="profile">Добавить</button>
+        </th>
+
+    </tr>
+    </thead>
+    <tbody *ngIf="form | async as p">
+    <tr class="tg-row" *ngFor="let user of p.users;let i = index">
+        <td  >{{i+1}}</td>
+        <td  >{{user.secondName}}</td>
+        <td  >{{user.firstName}}</td>
+        <td  >{{user.lastName}}</td>
+        <td  >{{user.role}}</td>
+        <td  >{{user.dateBorn | myData}}</td>
+        <td  >{{user.statusWork}}</td>
+        <td  >
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button class="btn btn-primary" [routerLink]="['/menu/list/view-profile', i ]">Просмотр</button>
+                <button class="btn btn-danger" (click)="deleteUser(i)">x</button>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>

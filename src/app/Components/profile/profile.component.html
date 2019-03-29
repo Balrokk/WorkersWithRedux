@@ -1,0 +1,69 @@
+<h1>Добавить профиль</h1>
+<form [formGroup]="myForm">
+  <div class="form-group">
+    <label>Фамилия</label>
+    <input type="text" class="form-control" formControlName="secondName"/>
+    <div class="alert alert-danger"
+         *ngIf="myForm.controls['secondName'].invalid && myForm.controls['secondName'].touched">
+      Обязательно к заполнению
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Имя</label>
+    <input type="text" class="form-control" formControlName="firstName"/>
+    <div class="alert alert-danger"
+         *ngIf="myForm.controls['firstName'].invalid && myForm.controls['firstName'].touched">
+      Обязательно к заполнению
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Отчество</label>
+    <input type="text" class="form-control" formControlName="lastName"/>
+    <div class="alert alert-danger"
+         *ngIf="myForm.controls['lastName'].invalid && myForm.controls['lastName'].touched">
+      Обязательно к заполнению
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Должность</label>
+    <input type="text" class="form-control" formControlName="role"/>
+    <div class="alert alert-danger"
+         *ngIf="myForm.controls['role'].invalid && myForm.controls['role'].touched">
+      Обязательно к заполнению
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Дата рождения</label>
+    <input type="date" class="form-control" formControlName="dateBorn"/>
+    <div class="alert alert-danger"
+         *ngIf="myForm.controls['dateBorn'].invalid && myForm.controls['dateBorn'].touched">
+      Обязательно к заполнению
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Статус</label>
+    <input type="text" class="form-control" formControlName="statusWork"/>
+    <div class="alert alert-danger"
+         *ngIf="myForm.controls['statusWork'].invalid && myForm.controls['statusWork'].touched">
+      Обязательно к заполнению
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-6">
+      <label>Ссылка на Фото</label>
+      <input type="text" class="form-control" formControlName="photo"/>
+      <img src="{{myForm.controls.photo.value}}" class="rounded img-fluid d-block col">
+    </div>
+
+    <div class="form-group col-6">
+      <label>Коментарий</label>
+      <textarea class="form-control" formControlName="comment"></textarea>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" routerLink="/menu/list" (click)="addUser()" >Добавить</button>
+  <button type="submit" class="btn btn-light ml-2" routerLink="/menu/list">Отмена</button>
+</form>

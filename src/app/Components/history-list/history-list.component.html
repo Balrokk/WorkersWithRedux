@@ -1,0 +1,28 @@
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button"  class="btn btn-secondary" routerLink="/menu/list">Список сотрудников</button>
+    <button type="button" class="btn btn-secondary" routerLink="/menu/history-list">История</button>
+    <button type="button" class="btn btn-secondary" routerLink="/authorization" (click)="GoOut()">Выйти</button>
+</div>
+<h1>История</h1>
+<table class="table">
+  <thead>
+  <tr class="tg-row">
+    <th><span class="btn">Дата</span></th>
+    <th ><span class="btn">Тип действия</span></th>
+    <th ><span class="btn">Кем</span></th>
+    <th><span class="btn">Объект изменения</span></th>
+  </tr>
+  </thead>
+  <tbody *ngIf="history | async as p">
+  <tr class="tg-row" *ngFor="let user of p.list;let i = index">
+
+    <td  >{{user.date}}</td>
+    <td  >{{user.typeAction}}</td>
+    <td  >{{user.login}}</td>
+    <td  >
+        <button class="btn btn-primary" [routerLink]="['/menu/history-list/view-record', i ]">Просмотр</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+

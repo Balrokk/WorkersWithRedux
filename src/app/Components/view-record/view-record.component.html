@@ -1,0 +1,117 @@
+
+
+
+
+<div class="row" *ngIf="oldObjFlag && newObjFlag">
+  <div class="col">
+    <h1>Старый профиль</h1>
+    <div>
+      <label>Имя</label>
+      <p>{{record.oldObj.firstName}}</p>
+    </div>
+    <div>
+      <label>Фамилия</label>
+      <p>{{record.oldObj.secondName}}</p>
+    </div>
+    <div>
+      <label>Отчество</label>
+      <p>{{record.oldObj.lastName}}</p>
+    </div>
+    <div>
+      <label>Дата рождения</label>
+      <p>{{record.oldObj.dateBorn}}</p>
+    </div>
+    <div>
+      <label>Роль</label>
+      <p>{{record.oldObj.role}}</p>
+    </div>
+    <div>
+      <label>Статус</label>
+      <p>{{record.oldObj.statusWork}}</p>
+    </div>
+    <div>
+      <label>Фото</label>
+      <p>{{record.oldObj.photo}}</p>
+    </div>
+    <div>
+      <label>Комментарий</label>
+      <p>{{record.oldObj.comment}}</p>
+    </div>
+  </div>
+
+
+  <div class="col">
+    <h1>Новый профиль</h1>
+    <div>
+      <label>Имя</label>
+      <p>{{record.newObj.firstName}}</p>
+    </div>
+    <div>
+      <label>Фамилия</label>
+      <p>{{record.newObj.secondName}}</p>
+    </div>
+    <div>
+      <label>Отчество</label>
+      <p>{{record.newObj.lastName}}</p>
+    </div>
+    <div>
+      <label>Дата рождения</label>
+      <p>{{record.newObj.dateBorn}}</p>
+    </div>
+    <div>
+      <label>Роль</label>
+      <p>{{record.newObj.role}}</p>
+    </div>
+    <div>
+      <label>Статус</label>
+      <p>{{record.newObj.statusWork}}</p>
+    </div>
+    <div>
+      <label>Фото</label>
+      <p>{{record.newObj.photo}}</p>
+    </div>
+    <div>
+      <label>Комментарий</label>
+      <p>{{record.newObj.comment}}</p>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="!oldObjFlag">
+  <h1>Профиль</h1>
+  <div>
+    <label>Имя</label>
+    <p>{{record.newObj.firstName}}</p>
+  </div>
+  <div>
+    <label>Фамилия</label>
+    <p>{{record.newObj.secondName}}</p>
+  </div>
+  <div>
+    <label>Отчество</label>
+    <p>{{record.newObj.lastName}}</p>
+  </div>
+  <div>
+    <label>Дата рождения</label>
+    <p>{{record.newObj.dateBorn}}</p>
+  </div>
+  <div>
+    <label>Роль</label>
+    <p>{{record.newObj.role}}</p>
+  </div>
+  <div>
+    <label>Статус</label>
+    <p>{{record.newObj.statusWork}}</p>
+  </div>
+  <div>
+    <label>Фото</label>
+    <p>{{record.newObj.photo}}</p>
+  </div>
+  <div>
+    <label>Комментарий</label>
+    <p>{{record.newObj.comment}}</p>
+  </div>
+
+</div>
+<button  type="submit" class="btn btn-primary" routerLink="/menu/history-list">Закрыть</button>
